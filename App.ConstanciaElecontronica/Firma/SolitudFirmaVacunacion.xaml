@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:forms="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
+             mc:Ignorable="d"
+             x:Class="App.ConstanciaElecontronica.Firma.SolitudFirmaVacunacion">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" Padding="15">
+                <Label x:Name="txtPerson"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Número de documento: "/>
+                    <Label x:Name="txtDocumento" FontAttributes="Bold"/>
+                </StackLayout>
+                
+                <Label />
+                <Label Text="Para continuar ingrese la siguiente información, se utilizará para firmar las constancias en esta sesión: "                 />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Digite la ciudad de expedición del documento: " VerticalOptions="Center" Padding="0,0,25,0"/>
+                    <Entry Placeholder=""  x:Name="txtCiudad" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" />
+                </StackLayout>
+                <Label Text="Firma del vacunador:"                 />
+                
+            <forms:SignaturePadView BackgroundColor="White"    Padding="30,0,30,0"
+                                    HeightRequest="260"                               
+                                    ClearText="limpiar"
+                                   CaptionText="Firma sobre la línea"
+                                    x:Name="sigPerson"
+                                       />
+            <Button Text="Continuar" x:Name="btnContinuar" Clicked="btnContinuar_Clicked"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,175 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <ApplicationIcon>icon_App.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="5.0.4" />
+    <PackageReference Include="Mobile.BuildTools" Version="1.4.0.638">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Plugin.Multilingual" Version="1.0.2" />
+    <PackageReference Include="Xamarin.Controls.SignaturePad.Forms" Version="3.0.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\App.ConstanciaElecontronica.Entities\App.ConstanciaElecontronica.Entities.csproj" />
+    <ProjectReference Include="..\App.ConstanciaElecontronica.Services\App.ConstanciaElecontronica.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="AppResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="CartaCompromisoCovid\InicioCartaCompromiso.xaml.cs">
+      <DependentUpon>InicioCartaCompromiso.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="HabeasData\ConfirmacionConsentimiento.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="EntregaInformacion\ConsentimientoInformado.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="EntregaInformacion\InicioEntregaInformacion.xaml.cs">
+      <DependentUpon>InicioEntregaInformacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Firma\FirmaAcompananteVacunacion.xaml.cs">
+      <DependentUpon>FirmaAcompananteVacunacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Firma\FirmaAcompanante.xaml.cs">
+      <DependentUpon>FirmaAcompanante.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Firma\SolitudFirmaVacunacion.xaml.cs">
+      <DependentUpon>SolitudFirmaVacunacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="HabeasData\ConfirmacionHabeasDataEvent.xaml.cs">
+      <DependentUpon>ConfirmacionHabeasDataEvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="HabeasData\ConstanciaHabeasDataEvent.xaml.cs">
+      <DependentUpon>ConstanciaHabeasDataEvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="InstruccionesEgreso\InicioInstruccionesEgreso.xaml.cs">
+      <DependentUpon>InicioInstruccionesEgreso.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Inyectologia\ConfirmacionConsentimiento.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Inyectologia\ConsentimientoInformado.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Inyectologia\InicioInyectologia.xaml.cs">
+      <DependentUpon>InicioInyectologia.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="TratamientoFarmacologico\ConfirmacionConsentimiento.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="TratamientoFarmacologico\ConsentimientoInformado.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="TratamientoFarmacologico\InicioTratamientoFarmacologico.xaml.cs">
+      <DependentUpon>InicioTratamientoFarmacologico.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="VacunaCovid\InicioVacuna.xaml.cs">
+      <DependentUpon>InicioVacuna.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="AppResource.es.resx">
+      <LastGenOutput>AppResource - Copia - Copia.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AppResources.en.resx">
+      <LastGenOutput>AppResource - Copia.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AppResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Camera\CameraPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CartaCompromisoCovid\CartaCompromiso.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CartaCompromisoCovid\ConfirmacionCartaComproCovid.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CuidadosEnfermeria\ConfirmacionConsentimiento.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CuidadosEnfermeria\ConsentimientoInformado.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CuidadosEnfermeria\InicioCuidadosEnfermeria.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Firma\FirmaAcompanante.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Firma\SolitudFirma.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Frame\MasterDetailPage1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Frame\MasterDetailPage1Detail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Frame\MasterDetailPage1Master.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="InstruccionesEgreso\ConfirmacionEgreso.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="InstruccionesEgreso\Confirmacion.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="InstruccionesEgreso\Constancia.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="HabeasData\ConfirmacionHabeasData.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="HabeasData\ConstanciaHabeasData.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="HabeasData\InicioHabeasData.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="InstruccionesEgreso\Inicio.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="InstruccionesEgreso\InstruEgresoFirma.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Loading.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Login.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SelectRole.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SignalR\InicioSolicitud.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadXFormsNugetUpgradeInfoBarAppConstanciaElecontronicaHideInfoBar="True" /></VisualStudio></ProjectExtensions>
+</Project>

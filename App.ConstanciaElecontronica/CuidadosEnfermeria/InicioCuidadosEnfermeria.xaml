@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App.ConstanciaElecontronica.CuidadosEnfermeria.InicioCuidadosEnfermeria">
+    <ContentPage.Resources>
+
+        <ResourceDictionary x:Name="AppDictionary">
+
+            <Color x:Key="BackgroundColor">#FFFFFF</Color>
+
+            <Color x:Key="BorderColor">#E1E1E1</Color>
+
+            <Style x:Key="InternalViewStyle" TargetType="BoxView">
+
+                <Setter Property="BackgroundColor" 
+
+            Value="{StaticResource BackgroundColor}"/>
+
+                <Setter Property="VerticalOptions" Value="Fill"/>
+
+                <Setter Property="Margin" Value="10,10,10,10"></Setter>
+
+            </Style>
+
+            <Style x:Key="BorderStyle" TargetType="BoxView">
+
+                <Setter Property="BackgroundColor" Value="{StaticResource BorderColor}"/>
+
+                <Setter Property="Margin" Value="3,1,1,3"></Setter>
+
+            </Style>
+
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+
+            <BoxView Color="White" />
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    
+                </Grid.RowDefinitions>
+
+                <!--<StackLayout  Grid.Row="0" Orientation="Horizontal" Padding="10,5" BackgroundColor="#004e9d">
+                    <Label Text="inicio" x:Name="user" TextColor="Green" HorizontalOptions="Start" VerticalOptions="Center" Margin="20,0"/>
+                    <Button Text="salir" Clicked="BtnLogoutClick" HorizontalOptions="EndAndExpand"  BackgroundColor="#004e9d" TextColor="white"  />
+                </StackLayout>-->
+
+                <Label Text="Consentimiento informado de cuidados de enfermería paciente adulto" Font="Bold" FontSize="Medium" HorizontalOptions="CenterAndExpand"  HorizontalTextAlignment="Center"  Grid.Row="1"/>
+                <BoxView Style="{StaticResource BorderStyle}"  Grid.Row="2"  Margin="8" CornerRadius="5" Opacity="0.5"/>
+                <BoxView Style="{StaticResource InternalViewStyle}"  Grid.Row="2"  Margin="10,0,0,0" CornerRadius="5" />
+                <StackLayout  Grid.Row="2" Orientation="Vertical" Padding="10" >
+                    <Label Text="Para aceptar el consentimiento informado se debe buscar el paciente por el número de la atención"/>
+                    <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="Número de atención"  x:Name="txtAtencion" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Keyboard="Numeric"/>
+                    <Button Text="Consultar" Clicked="BtnAtencion" HorizontalOptions="End"  BackgroundColor="#004e9d" TextColor="white"  WidthRequest="150"  CornerRadius="5"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <BoxView Style="{StaticResource BorderStyle}"  Grid.Row="3"  Margin="8" CornerRadius="5" Opacity="0.5" x:Name="boxExternal1"/>
+                <BoxView Style="{StaticResource InternalViewStyle}"  Grid.Row="3"  Margin="10,0,0,12" CornerRadius="5" x:Name="boxInternal1"/>
+                <StackLayout  Grid.Row="3" Orientation="Vertical" Padding="15" x:Name="lytPatient">
+                    <Label Text="Datos del paciente" FontSize="Medium" />
+                    <StackLayout  Orientation="Horizontal" >
+                        <Label Text="Paciente:"  Font="Bold"/>
+                        <Label Text="" x:Name="lblPatient"/>
+                    </StackLayout>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+
+                        </Grid.RowDefinitions>
+                        <Label Text="Tipo documento:" Font="Bold" Grid.Column="0"  Grid.Row="0"/>
+                        <Label Text=""   x:Name="lblTipoDoc" Grid.Column="1" Grid.Row="0"/>
+                        <Label Text="Número documento:" Font="Bold"   Grid.Column="2" Grid.Row="0"/>
+                        <Label Text="" Grid.Column="3"  x:Name="lblDocumento"  Grid.Row="0"/>
+                        <Label Text="Sexo:" Font="Bold" Grid.Column="0" Grid.Row="1" />
+                        <Label Text=""   x:Name="lblSexo" Grid.Column="1" Grid.Row="1"/>
+                        <Label Text="Edad:" Font="Bold"   Grid.Column="2" Grid.Row="1"/>
+                        <Label Text="" Grid.Column="3"  x:Name="lblEdad" Grid.Row="1"/>
+                    </Grid>
+                </StackLayout>
+              
+                <StackLayout  Grid.Row="4" Orientation="Vertical" Padding="10" x:Name="lytButtons">
+                    <Label Text="En señal de aceptación firma este documento digital:"  />
+                    <StackLayout  Orientation="Horizontal"   >
+                        <CheckBox  x:Name="cbxPaciente" Color="#005eff"  CheckedChanged="cbxPaciente_CheckedChanged_1"/>
+                        <Label Text="Paciente"  VerticalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout  Orientation="Horizontal"   >
+                        <CheckBox  x:Name="cbxResponsable" Color="#005eff"  CheckedChanged="cbxResponsable_CheckedChanged_1"/>
+                        <Label Text="Acompañante"   VerticalOptions="Center" />
+                    </StackLayout>
+                    <Label  Text="el consentimiento ya fue aceptado"   HorizontalOptions="CenterAndExpand"  TextColor="DarkRed" x:Name="txtValidation"/>
+                    <StackLayout  Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  >
+                        <Button Text="Limpiar" HorizontalOptions="CenterAndExpand"  WidthRequest="150" CornerRadius="15" Clicked="BtnLimpiarClicked"/>
+                        <Button Text="Continuar" Clicked="BtnContinuar" HorizontalOptions="CenterAndExpand" BackgroundColor="#004e9d" TextColor="white"  WidthRequest="150" CornerRadius="15"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

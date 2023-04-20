@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Accept" xml:space="preserve">
+    <value>Acepto</value>
+  </data>
+  <data name="Age" xml:space="preserve">
+    <value>Edad:</value>
+  </data>
+  <data name="Brother" xml:space="preserve">
+    <value>Hermano (a)</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Limpiar</value>
+  </data>
+  <data name="cousin" xml:space="preserve">
+    <value>Primo</value>
+  </data>
+  <data name="Father" xml:space="preserve">
+    <value>Padre</value>
+  </data>
+  <data name="Friend" xml:space="preserve">
+    <value>Amigo (a)</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Sexo:</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Información del paciente</value>
+  </data>
+  <data name="Married" xml:space="preserve">
+    <value>Esposo (a)</value>
+  </data>
+  <data name="Mother" xml:space="preserve">
+    <value>Madre</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nombre:</value>
+  </data>
+  <data name="NumDoc" xml:space="preserve">
+    <value>Número documento:</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Otro</value>
+  </data>
+  <data name="Patient" xml:space="preserve">
+    <value>Paciente:</value>
+  </data>
+  <data name="PName" xml:space="preserve">
+    <value>Nombre completo</value>
+  </data>
+  <data name="PNumDoc" xml:space="preserve">
+    <value>Número de identificación</value>
+  </data>
+  <data name="pSon" xml:space="preserve">
+    <value>Ejm: Hijo 1</value>
+  </data>
+  <data name="Relation" xml:space="preserve">
+    <value>Relación:</value>
+  </data>
+  <data name="SelectedOption" xml:space="preserve">
+    <value>seleccione una opción</value>
+  </data>
+  <data name="Sing" xml:space="preserve">
+    <value>Firma sobre la línea</value>
+  </data>
+  <data name="Son" xml:space="preserve">
+    <value>Hijo (a)</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Autorización de Tratamiento de Datos</value>
+  </data>
+  <data name="titleAccompanying" xml:space="preserve">
+    <value>Datos Acompañante</value>
+  </data>
+  <data name="TypeDoc" xml:space="preserve">
+    <value>Tipo documento:</value>
+  </data>
+  <data name="which" xml:space="preserve">
+    <value>¿Cuál?:</value>
+  </data>
+  <data name="document" xml:space="preserve">
+    <value>Con la firma de este documento manifiesto que he sido informado por el personal de admisiones del HOSPITAL UNIVERSITARIO SAN IGNACIO (en adelante “HUSI”) que: 
+                            
+    a.	Con ocasión de mi atención en salud, el HUSI deberá recolectar mis datos personales y se compromete a darles un uso responsable y confidencial, conforme a la Política de Tratamiento de Datos Personales  del HUSI disponible en www.husi.org.co
+
+    b.	Que en el curso de mi atención tendré que dar información personal, sensible y privada y que la misma será manejada con estricto apego a la Constitución, la Ley y la política interna publicada.
+
+    c.	Que también deberé suministrar información relacionada con mi identificación, afiliación a la seguridad social, domicilio, actividad económica, entre otros datos, que la ley exige para la correcta identificación de los usuarios de los servicios de salud.
+
+    d.	Que en casos definidos en las normas legales colombianas, el HUSI deberá compartir la información recogida con las autoridades sanitarias y con otros integrantes del sistema de seguridad social, sin que ello constituya una transgresión a mis derechos.
+	
+    e.	Que me comprometo a suministrar información veraz y completa tanto de mis datos personales como de mis antecedentes clínicos y que he sido informado (a) que serán reportadas a las autoridades competentes las inconsistencias que eventualmente sean detectadas.
+
+    f.	Que tengo derecho a pedir la corrección de errores consignados en mi historia clínica y demás registros asistenciales, siguiendo el debido proceso previsto en la ley.
+
+    g.	Que mis derechos pueden ser ejercidos a través de los canales gratuitos dispuestos por el HUSI y observando la Política de Tratamiento de Datos Personales del HUSI
+
+    h.	Que cualquier inquietud o información relacionada con el tratamiento de datos personales, puedo contactarme con la Oficina de Atención al Usuario en la Carrera 7 N° 40-62 Primer Piso. Bogotá D.C., Correo Electrónico: atencionusuario@husi.org.co, Teléfono: 5946161 ext. 2127.
+
+    Con base en la información recibida, autorizo el tratamiento de datos necesarios para mi atención y su administración conforme lo disponen las normas legales y la Política de Tratamiento de Datos Personales del HUSI.</value>
+  </data>
+  <data name="diplomatCard" xml:space="preserve">
+    <value>Carnet Diplomático</value>
+  </data>
+  <data name="foreignCertificate" xml:space="preserve">
+    <value>Documento Extranjero</value>
+  </data>
+  <data name="ForeignerCard" xml:space="preserve">
+    <value>Cédula de Extranjería</value>
+  </data>
+  <data name="ONUpassport" xml:space="preserve">
+    <value>Pasaporte de la ONU</value>
+  </data>
+  <data name="passport" xml:space="preserve">
+    <value>Pasaporte</value>
+  </data>
+  <data name="specialPermission" xml:space="preserve">
+    <value>Permiso Especial Permanencia</value>
+  </data>
+  <data name="ColombianCard" xml:space="preserve">
+    <value>Cédula</value>
+  </data>
+  <data name="IdentityCard" xml:space="preserve">
+    <value>Tarjeta de Identidad</value>
+  </data>
+  <data name="SafeConduct" xml:space="preserve">
+    <value>Salvo Conducto en Permanencia</value>
+  </data>
+  <data name="adutlWithOut" xml:space="preserve">
+    <value>Adulto Sin Identificación</value>
+  </data>
+  <data name="civilRegistry" xml:space="preserve">
+    <value>Registro Civil</value>
+  </data>
+  <data name="liveBirth" xml:space="preserve">
+    <value>Nacido Vivo</value>
+  </data>
+  <data name="minorWithOut" xml:space="preserve">
+    <value>Menor sin identificación</value>
+  </data>
+</root>

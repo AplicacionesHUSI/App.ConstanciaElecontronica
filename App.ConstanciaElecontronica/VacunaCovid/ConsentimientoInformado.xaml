@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:util="clr-namespace:App.ConstanciaElecontronica.Util"
+             xmlns:forms="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
+             xmlns:firma="clr-namespace:App.ConstanciaElecontronica.Firma"
+             mc:Ignorable="d"
+             x:Class="App.ConstanciaElecontronica.VacunaCovid.ConsentimientoInformado">
+    <ContentPage.Resources>
+
+        <ResourceDictionary x:Name="AppDictionary">
+
+            <Color x:Key="BackgroundColor">#FFFFFF</Color>
+
+            <Color x:Key="BorderColor">#E1E1E1</Color>
+
+            <Style x:Key="InternalViewStyle" TargetType="BoxView">
+
+                <Setter Property="BackgroundColor" 
+
+            Value="{StaticResource BackgroundColor}"/>
+
+                <Setter Property="VerticalOptions" Value="Fill"/>
+
+                <Setter Property="Margin" Value="10,10,10,10"></Setter>
+
+            </Style>
+
+            <Style x:Key="BorderStyle" TargetType="BoxView">
+
+                <Setter Property="BackgroundColor" Value="{StaticResource BorderColor}"/>
+
+                <Setter Property="Margin" Value="3,1,1,3"></Setter>
+
+            </Style>
+
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White" >
+            <StackLayout  Grid.Row="0" Orientation="Horizontal" Padding="10,5" BackgroundColor="#004e9d">
+                <Label Text="Consentimiento" x:Name="user" TextColor="Green" HorizontalOptions="Start" VerticalOptions="Center" Margin="20,0"/>
+                <Button Text="Regresar" Clicked="Button_Clicked_1" HorizontalOptions="EndAndExpand"  BackgroundColor="#004e9d" TextColor="white"  />
+            </StackLayout>
+
+
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0"  Font="Bold" HorizontalTextAlignment="Center" Text="CONSENTIMIENTO INFORMADO PARA LA APLICACIÓN DE LA VACUNA CONTRA EL SARS-CoV-2/COVID-19" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+                <BoxView Style="{StaticResource BorderStyle}"  Grid.Row="1"  Margin="8" CornerRadius="5" Opacity="0.5"/>
+                <BoxView Style="{StaticResource InternalViewStyle}"  Grid.Row="1"  Margin="10,10,10,12" CornerRadius="5" />
+                <StackLayout  Grid.Row="1" Orientation="Vertical" Padding="15">
+                    <Label x:Name="txtDate"/>
+                    <Label Text="DATOS DE IDENTIFICACIÓN DE LA PERSONA" FontSize="Medium" />
+                    
+                 
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+
+                        </Grid.RowDefinitions>
+                        <Label Text="Nombres:" Font="Bold" Grid.Column="0"  Grid.Row="0"/>
+                        <Label Text=""   x:Name="lblNombres" Grid.Column="1" Grid.Row="0"/>
+                        <Label Text="Apellidos:" Font="Bold" Grid.Column="2"  Grid.Row="0"/>
+                        <Label Text="" Grid.Column="3"  x:Name="lblApellidos"  Grid.Row="0"/>
+                        <Label Text="Tipo identificación:" Font="Bold" Grid.Column="0"  Grid.Row="1"/>
+                        <Label Text=""   x:Name="lblTipoDoc" Grid.Column="1" Grid.Row="1"/>
+                        <Label Text="Identificación:" Font="Bold"   Grid.Column="2" Grid.Row="1"/>
+                        <Label Text="" Grid.Column="3"  x:Name="lblDocumento"  Grid.Row="1"/>
+                        <Label Text="Fecha nacimiento:" Font="Bold" Grid.Column="0" Grid.Row="2" />
+                        <Label Text=""   x:Name="lblFechaNacimiento" Grid.Column="1" Grid.Row="2"/>
+                        <Label Text="Edad:" Font="Bold"   Grid.Column="2" Grid.Row="2"/>
+                        <Label Text="" Grid.Column="3"  x:Name="lblEdad" Grid.Row="2"/>
+                        <Label Text="NOMBRE DE LA EAPB RESPONSABLE:" Font="Bold"  Grid.ColumnSpan="2"  Grid.Column="0" Grid.Row="3"/>
+                        <Label Text="" x:Name="lblEPS"  Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2"/>
+                        
+                    </Grid>
+                </StackLayout>
+
+                
+                <ScrollView Grid.Row="2"  VerticalOptions="FillAndExpand" BackgroundColor="White">
+
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        
+                        <BoxView Style="{StaticResource BorderStyle}" Grid.Row="0"  Margin="8" CornerRadius="5" Opacity="0.5" />
+                        <BoxView Style="{StaticResource InternalViewStyle}" Grid.Row="0"   Margin="10,10,10,12" CornerRadius="5" />
+
+                        <StackLayout Grid.Row="0"  Padding="15">
+
+                        <Label TextType="Html" >
+                            <Label.Text>
+                                <x:String>
+                                    <![CDATA[<h2>    INFORMACIÓN PREVIA</h2>]]>
+                                </x:String>
+                            </Label.Text>
+                        </Label>
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[La vacunación es una forma segura y eficaz de prevenir enfermedades y salvar muchas vidas. En la actualidad el país dispone de vacunas para proteger contra al menos 26 enfermedades, entre ellas, la difteria, el tétanos, la tos ferina, la poliomielitis, la hepatitis, el cáncer de útero y el sarampión. En conjunto, estas vacunas salvan cada año millones de vidas en el mundo. Con la aplicación de las vacunas las personas se protegen a sí mismas y a quienes las rodean.]]>
+                        </util:HtmlFormattedLabel>
+                            <util:HtmlFormattedLabel >
+                                <![CDATA[La vacunación contra el SARS- CoV-2/COVID-19 reducirá la posibilidad de presentar la enfermedad. En esta etapa de la emergencia, en la cual se inicia la aplicación de esta vacuna, se han reconocido beneficios y riesgos, que es importante que usted conozca antes de dar el consentimiento para su aplicación.]]>
+                            </util:HtmlFormattedLabel>
+
+                            <util:HtmlFormattedLabel >
+                                <![CDATA[Esta vacuna tiene aprobación de uso de emergencia y surtió los pasos para la validación científica y sanitaria que permite su aplicación segura en humanos.]]>
+                            </util:HtmlFormattedLabel>
+
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions >
+                                    <ColumnDefinition Width="30*"/>
+                                    <ColumnDefinition Width="70*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label TextType="Html" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                                    <Label.Text>
+                                        <x:String>
+                                            <![CDATA[ <b>DATOS IMPORTANTES DE LA VACUNA <b>(Por favor, leer con detenimiento. Puede formular preguntas)]]>
+                                        </x:String>
+                                    </Label.Text>
+                                </Label>
+                                    
+                                <Label TextType="Html" Grid.Row="1" Grid.Column="0">
+                                    <Label.Text>
+                                        <x:String>
+                                            <![CDATA[ <b>VACUNA Y DOSIS</b>]]>
+                                        </x:String>
+                                    </Label.Text>
+                                </Label>
+                                <StackLayout Grid.Row="1" Grid.Column="1">
+                                <util:HtmlFormattedLabel FontSize="14"   >
+                                    <util:HtmlFormattedLabel.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Nombre de la vacuna a aplicar " />
+
+                                            <Span Text="" FontAttributes="Bold" x:Name="lblVacuna" TextDecorations="Underline"/>
+                                            <Span Text=" " />                                            
+                                        </FormattedString>
+                                    
+                                    </util:HtmlFormattedLabel.FormattedText>
+                                    </util:HtmlFormattedLabel>
+                                        <util:HtmlFormattedLabel FontSize="14"   >
+                                            <util:HtmlFormattedLabel.FormattedText>
+                                            <FormattedString>                                              
+                                                <Span>
+                                                    <![CDATA[Esquema que tiene esta vacuna: Dos dosis ]]>
+                                                </Span>
+                                                <Span Text="" FontAttributes="Bold" x:Name="lblDosDosis" TextDecorations="Underline"/>
+                                                <Span>
+                                                    <![CDATA[ o dosis única ]]>
+                                                </Span>
+                                                <Span Text="" FontAttributes="Bold" x:Name="lblDosisUnica" TextDecorations="Underline"/>
+                                            </FormattedString>
+                                        </util:HtmlFormattedLabel.FormattedText>
+                                        </util:HtmlFormattedLabel>
+                                </StackLayout>
+                                
+                                <!--<util:HtmlFormattedLabel Grid.Row="1" Grid.Column="1" >
+                                    <![CDATA[Nombre de la vacuna a aplicar___________________________ Esquema que tiene esta vacuna: Dos dosis _____ o dosis única _____]]>
+                                </util:HtmlFormattedLabel>
+                          
+                                <util:HtmlFormattedLabel >
+                                    <util:HtmlFormattedLabel.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="-La " />
+
+                                            <Span Text="cloroquina " FontAttributes="Bold" />
+                                            <Span Text="e "/>
+                                            <Span Text="hidroxicloroquina " FontAttributes="Bold" />
+                                            <Span>
+                                                <![CDATA[son fármacos antimaláricos y antiinflamatorios indicados en enfermedades como artritis reumatoidea y lupus eritematoso, se les ha documentado actividad contra SARS-CoV-2, pues interfieren en la entrada del virus a la célula y producen alteraciones en la síntesis de sus componentes, disminuyendo la concentración del virus en el organismo y favoreciendo una recuperación más rápida. Los pacientes presentaron mejoría sintomática ligeramente más rápida (0.4 a 1.3 días según el síntoma) y se describe también mejoría radiológica en aquellos con diagnóstico de neumonía (80 vs 54%).]]></Span>
+                                        </FormattedString>                                    
+                                    </util:HtmlFormattedLabel.FormattedText> 
+                                
+                                </util:HtmlFormattedLabel>
+                                -->
+
+                                <Label TextType="Html" Grid.Row="2" Grid.Column="0">
+                                    <Label.Text>
+                                        <x:String>
+                                            <![CDATA[ <b>CÓMO SE APLICA</b> ]]>
+                                        </x:String>
+                                    </Label.Text>
+                                </Label>
+                                <util:HtmlFormattedLabel Grid.Row="2" Grid.Column="1" >
+                                    <![CDATA[Administración vía intramuscular en el brazo (tercio medio del músculo deltoides).]]>
+                                </util:HtmlFormattedLabel>
+
+                                <Label TextType="Html" Grid.Row="3" Grid.Column="0">
+                                    <Label.Text>
+                                        <x:String>
+                                            <![CDATA[ <b>BENEFICIOS</b>]]>
+                                        </x:String>
+                                    </Label.Text>
+                                </Label>
+                                <util:HtmlFormattedLabel Grid.Row="3" Grid.Column="1" >
+                                    <![CDATA[Prevención de la enfermedad COVID-19, causada por el virus SARS-CoV-2. Reducción de la severidad de la enfermedad en caso de presentarse. Potencial protección del entorno familiar y los allegados.]]>
+                                </util:HtmlFormattedLabel>
+
+                                <Label TextType="Html" Grid.Row="4" Grid.Column="0">
+                                    <Label.Text>
+                                        <x:String>
+                                            <![CDATA[ <b>RIESGOS</b>]]>
+                                        </x:String>
+                                    </Label.Text>
+                                </Label>
+                                <util:HtmlFormattedLabel Grid.Row="4" Grid.Column="1" >
+                                    <![CDATA[Presentación de efectos adversos a corto y mediano plazo posterior a su aplicación como: dolor en el sitio de inyección, dolor de cabeza (cefalea, articulaciones (artralgia), muscular (mialgia); fatiga (cansancio); resfriado; fiebre (pirexias); enrojecimiento e inflamación leve en el lugar de la inyección; inflamación de los ganglios (linfadenopatía); malestar general; sensación de adormecimiento en las extremidades, reacciones alérgicas leves, moderadas o severas. Estos no se presentan en todas las personas.]]>
+                                </util:HtmlFormattedLabel>
+                                <Label TextType="Html" Grid.Row="5" Grid.Column="0">
+                                    <Label.Text>
+                                        <x:String>
+                                            <![CDATA[ <b>ALTERNATIVAS</b>]]>
+                                        </x:String>
+                                    </Label.Text>
+                                </Label>
+                                <util:HtmlFormattedLabel Grid.Row="5" Grid.Column="1" >
+                                    <![CDATA[A la fecha no se ha identificado otra medida farmacológica más eficaz que la vacunación para la prevención de la COVID-19.]]>
+                                </util:HtmlFormattedLabel>                                
+
+
+                            </Grid>
+
+                            <Label TextType="Html">
+                                <Label.Text>
+                                    <x:String>
+                                        <![CDATA[      <h2>    EXPRESIÓN DE LA VOLUNTAD</h2>]]>
+                                    </x:String>
+                                </Label.Text>
+                            </Label>
+                            <util:HtmlFormattedLabel >
+                                <![CDATA[De manera voluntaria, después de haber recibido información por el personal de salud, de manera clara, concreta, sencilla y en términos acordes con mi condición, así como las explicaciones adecuadas, informo que comprendo los beneficios, riesgos, alternativas e implicaciones de la aplicación de la vacuna que se me ofrece. De la misma manera, se me han indicado las recomendaciones que debo seguir, de acuerdo con la información entregada por el laboratorio productor de la vacuna.]]>
+                            </util:HtmlFormattedLabel>
+                            <util:HtmlFormattedLabel >
+                                <![CDATA[Entiendo que la suscripción de este documento constituye una expresión autónoma de mi voluntad, y que NO tiene por objeto eximir de responsabilidad a las autoridades sanitarias o gubernamentales ni a las entidades que participaron en la aplicación de la vacuna contra el SARS-CoV-2/COVID-19 de brindar la atención en salud que sea necesaria por la aparición de posibles reacciones adversas no reportadas.]]>
+                            </util:HtmlFormattedLabel>
+
+                            <StackLayout >
+                                <util:HtmlFormattedLabel >
+                                    <![CDATA[ En consecuencia, decido ]]><!--___ que se me aplique la vacuna. NO ACEPTAR: ___ que se me aplique la vacuna.]]>-->
+                                </util:HtmlFormattedLabel>
+                                <StackLayout Orientation="Horizontal">
+                                    <CheckBox  x:Name="cbxAceptar" Color="#005eff" CheckedChanged="cbxAceptar_CheckedChanged"/>
+                                    <util:HtmlFormattedLabel  VerticalOptions="Center">
+                                        <![CDATA[ ACEPTAR: ]]>
+                                    </util:HtmlFormattedLabel>
+                                    
+                                    <util:HtmlFormattedLabel  VerticalOptions="Center">  
+                                        <![CDATA[ que se me aplique la vacuna.]]>                                    
+                                    </util:HtmlFormattedLabel>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <CheckBox  x:Name="cbxNoAceptar" Color="#005eff" CheckedChanged="cbxNoAceptar_CheckedChanged"/>
+                                    <util:HtmlFormattedLabel  VerticalOptions="Center">
+                                        <![CDATA[ NO ACEPTAR: ]]>
+                                    </util:HtmlFormattedLabel>
+                                    
+                                    <util:HtmlFormattedLabel  VerticalOptions="Center">
+                                        <![CDATA[ que se me aplique la vacuna.]]>
+                                    </util:HtmlFormattedLabel>
+                                    
+                                </StackLayout>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal" x:Name="lytRazon" IsVisible="false">
+                                <Label Text="Razón por la que no puede firmar: "  Font="Bold" VerticalOptions="Center"  />
+                                <Label x:Name="txtRazon"  VerticalOptions="Center"  />
+                            </StackLayout>
+
+
+                        </StackLayout>
+
+                        <BoxView Style="{StaticResource BorderStyle}" Grid.Row="3"  Margin="8" CornerRadius="5" Opacity="0.5" x:Name="bxvFirmaAdd"/>
+                        <BoxView Style="{StaticResource InternalViewStyle}" Grid.Row="3"   Margin="10,0,0,12" CornerRadius="5" x:Name="bxvFirmaAdd1"/>
+                        <StackLayout Grid.Row="3" Padding="15" x:Name="lytFirmaAdd">
+                            <Label Text="Firma Paciente" Font="Bold"  FontSize="Medium"/>
+
+                            <forms:SignaturePadView BackgroundColor="White"    Padding="30,0,30,0"
+                                    HeightRequest="240"                               
+                                    ClearText="limpiar"
+                                   CaptionText="Firma sobre la línea"
+                                    x:Name="sigPatientAdd"
+                                       />
+                        </StackLayout>
+
+
+                        <Grid Grid.Row="4">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <BoxView Style="{StaticResource BorderStyle}" Grid.Row="0"  Margin="8" CornerRadius="5" Opacity="0.5" x:Name="bxvResponsable"/>
+                            <BoxView Style="{StaticResource InternalViewStyle}" Grid.Row="0"   Margin="10,0,0,12" CornerRadius="5" x:Name="bxvResponsable1"/>
+                            <StackLayout   Grid.Row="0"  Margin="14" x:Name="lytResponsable">
+                                <firma:FirmaAcompananteVacunacion x:Name="formFirma"></firma:FirmaAcompananteVacunacion>
+                            </StackLayout>
+                        </Grid>
+
+                        <BoxView Style="{StaticResource BorderStyle}" Grid.Row="5"  Margin="8" CornerRadius="5" Opacity="0.5" />
+                        <BoxView Style="{StaticResource InternalViewStyle}" Grid.Row="5"   Margin="10,0,0,12" CornerRadius="5" />
+                        <StackLayout Grid.Row="5" Padding="15">
+                            <Label Text="Firma" Font="Bold"  FontSize="Medium"/>
+                            
+                            <forms:SignaturePadView BackgroundColor="White"    Padding="30,0,30,0"
+                                    HeightRequest="240"                               
+                                    ClearText="limpiar"
+                                   CaptionText="Firma sobre la línea"
+                                    x:Name="sigPatient"
+                                       />
+                        </StackLayout>
+                        
+                        <StackLayout   Grid.Row="6"  Margin="12" Orientation="Horizontal" HorizontalOptions="Center">
+                            <Button Text="Guardar" x:Name="btnAceptar" CornerRadius="10" BackgroundColor="#004e9d" TextColor="white" HorizontalOptions="Center" WidthRequest="250" Clicked="Button_Clicked"/>
+                            <ActivityIndicator IsRunning="false"   Color="#004e9d" x:Name="bar" WidthRequest="30" HeightRequest="30"/>
+                        </StackLayout>
+                    </Grid>
+
+                </ScrollView>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

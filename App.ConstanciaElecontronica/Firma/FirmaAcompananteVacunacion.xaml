@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:herlper="clr-namespace:App.ConstanciaElecontronica.Helper"
+             mc:Ignorable="d"
+             x:Class="App.ConstanciaElecontronica.Firma.FirmaAcompananteVacunacion">
+  <ContentView.Content>
+      <StackLayout>
+            <Label Text="En caso de requerirse, identificación y firma de quien tiene la patria potestad, la representación legal o la custodia:"   Font="Bold" />
+            
+
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Nombres:" VerticalOptions="Center" Padding="0,0,73,0"    Font="Bold" />
+                <Entry x:Name="txtResponsable" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Placeholder="Nombres"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Apellidos:" VerticalOptions="Center" Padding="0,0,73,0"    Font="Bold" />
+                <Entry x:Name="txtResponsableApellidos" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Placeholder="Apellidos"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{herlper:Translate TypeDoc}" VerticalOptions="Center" Padding="0,0,22,0"   Font="Bold"/>
+                <Picker   HorizontalOptions="FillAndExpand" x:Name="cbxTipoDoc"
+                            Title="{herlper:Translate SelectedOption}"
+                            TitleColor="#262323"
+                           SelectedIndexChanged="cbxTipoDoc_SelectedIndexChanged"
+                          >
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <herlper:Translate>IdentityCard</herlper:Translate>                            
+                            <herlper:Translate>ColombianCard</herlper:Translate>                            
+                            <herlper:Translate>ForeignerCard</herlper:Translate>                            
+                            <herlper:Translate>civilRegistry</herlper:Translate>
+                            <herlper:Translate>foreignCertificate</herlper:Translate>
+                            <herlper:Translate>passport</herlper:Translate>
+                            <herlper:Translate>minorWithOut</herlper:Translate>
+                            <herlper:Translate>adutlWithOut</herlper:Translate>
+                            <herlper:Translate>liveBirth</herlper:Translate>
+                            <herlper:Translate>diplomatCard</herlper:Translate>
+                            <herlper:Translate>SafeConduct</herlper:Translate>                            
+                            <herlper:Translate>ONUpassport</herlper:Translate>
+                            <herlper:Translate>specialPermission</herlper:Translate>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{herlper:Translate NumDoc}" VerticalOptions="Center"  Font="Bold"/>
+                <Entry x:Name="txtNumDoc"  Keyboard="Numeric" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Placeholder="Número de identificación"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Expedido en:" VerticalOptions="Center" Padding="0,0,53,0"    Font="Bold" />
+                <Entry x:Name="txtLugar" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Placeholder="Lugar de expedición del documento"/>
+            </StackLayout>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>
+
+<!--Amigo (a)
+Esposo (a)
+Hermano (a)
+Hijo (a)
+Madre
+Otro
+Padre
+primo
+-->

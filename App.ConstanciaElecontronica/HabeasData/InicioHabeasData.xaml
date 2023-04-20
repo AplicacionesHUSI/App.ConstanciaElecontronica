@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App.ConstanciaElecontronica.HabeasData.InicioHabeasData">
+    <ContentPage.Resources>
+
+        <ResourceDictionary x:Name="AppDictionary">
+
+            <Color x:Key="BackgroundColor">#FFFFFF</Color>
+
+            <Color x:Key="BorderColor">#E1E1E1</Color>
+
+            <Style x:Key="InternalViewStyle" TargetType="BoxView">
+
+                <Setter Property="BackgroundColor" 
+
+            Value="{StaticResource BackgroundColor}"/>
+
+                <Setter Property="VerticalOptions" Value="Fill"/>
+
+                <Setter Property="Margin" Value="10,10,10,10"></Setter>
+
+            </Style>
+
+            <Style x:Key="BorderStyle" TargetType="BoxView">
+
+                <Setter Property="BackgroundColor" Value="{StaticResource BorderColor}"/>
+
+                <Setter Property="Margin" Value="3,1,1,3"></Setter>
+
+            </Style>
+
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+        <Grid>
+
+            <BoxView Color="White" />
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"  x:Name="row0"/>
+                    <RowDefinition Height="Auto" x:Name="row1"/>
+                    <RowDefinition Height="Auto" x:Name="row2"/>
+                    <RowDefinition Height="Auto" x:Name="row3"/>
+                    <RowDefinition Height="auto" x:Name="row4"/>
+                    <RowDefinition Height="auto" x:Name="row5"/>
+                    <RowDefinition Height="auto" x:Name="row6"/>
+                    
+                </Grid.RowDefinitions>
+
+                <!--<StackLayout  Grid.Row="0" Orientation="Horizontal" Padding="10,5" BackgroundColor="#004e9d">
+                    <Label Text="inicio" x:Name="user" TextColor="Green" HorizontalOptions="Start" VerticalOptions="Center" Margin="20,0"/>
+                    <Button Text="salir" Clicked="BtnLogoutClick" HorizontalOptions="EndAndExpand"  BackgroundColor="#004e9d" TextColor="white"  />
+                </StackLayout>-->
+
+                <Label Text=" Consulta Autorización de Tratamiento de Datos" Font="Bold" FontSize="Medium" HorizontalOptions="CenterAndExpand" Grid.Row="1"/>
+                <BoxView Style="{StaticResource BorderStyle}"  Grid.Row="2"  Margin="8" CornerRadius="5" Opacity="0.5"/>
+                <BoxView Style="{StaticResource InternalViewStyle}"  Grid.Row="2"  Margin="10,0,0,0" CornerRadius="5" />
+                <StackLayout  Grid.Row="2" Orientation="Vertical" Padding="10" >
+                    <Label Text="Tipo de documento"/>
+                    <Picker   HorizontalOptions="FillAndExpand" x:Name="cbxTipoDoc"
+                            Title="seleccione una opción"
+                            TitleColor="#262323" SelectedIndexChanged="cbxTipoDoc_SelectedIndexChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Tarjeta de Identidad</x:String>
+                                <x:String>Cédula</x:String>
+                                <x:String>Cédula de Extranjería</x:String>
+                                <x:String>Documento Extranjero</x:String>
+                                <x:String>Registro Civil</x:String>                                    
+                                <x:String>Pasaporte</x:String>
+                                <x:String>Menor sin identificación</x:String>
+                                <x:String>Adulto Sin Identificación</x:String>                                    
+                                <x:String>Nacido Vivo</x:String>                                    
+                                <x:String>Carnet Diplomático</x:String>
+                                <x:String>Salvo Conducto en Permanencia</x:String>
+                                <x:String>Pasaporte de la ONU</x:String>
+                                <x:String>Permiso Especial Permanencia</x:String>
+                                <x:String>Permiso Protección Temporal</x:String>
+
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <Entry Placeholder="Número de documento"  x:Name="txtDocumento" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Keyboard="Numeric"/>
+                    <Button Text="Consultar" HorizontalOptions="FillAndExpand"   WidthRequest="150" Clicked="BtnDocClicked" CornerRadius="5"/>
+                </StackLayout>
+                <BoxView Style="{StaticResource BorderStyle}"  Grid.Row="3"  Margin="8" CornerRadius="5" Opacity="0.5" x:Name="BoxExternal"/>
+                <BoxView Style="{StaticResource InternalViewStyle}"  Grid.Row="3"  Margin="10,10,10,12" CornerRadius="5" x:Name="BoxInternal" />
+                <StackLayout  Grid.Row="3" Orientation="Vertical" Padding="15" x:Name="lytPaciente">
+                    <Label Text="Información del paciente" FontSize="Medium" />
+                    <StackLayout  Orientation="Horizontal" >
+                        <Label Text="Paciente:"  Font="Bold"/>
+                        <Label Text="" x:Name="lblPatient"/>
+                    </StackLayout>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+
+                        </Grid.RowDefinitions>
+                        <Label Text="Tipo documento:" Font="Bold" Grid.Column="0"  Grid.Row="0"/>
+                        <Label Text=""   x:Name="lblTipoDoc" Grid.Column="1" Grid.Row="0"/>
+                        <Label Text="Número documento:" Font="Bold"   Grid.Column="2" Grid.Row="0"/>
+                        <Label Text="" Grid.Column="3"  x:Name="lblDocumento"  Grid.Row="0"/>
+                        <Label Text="Sexo:" Font="Bold" Grid.Column="0" Grid.Row="1" />
+                        <Label Text=""   x:Name="lblSexo" Grid.Column="1" Grid.Row="1"/>
+                        <Label Text="Edad:" Font="Bold"   Grid.Column="2" Grid.Row="1"/>
+                        <Label Text="" Grid.Column="3"  x:Name="lblEdad" Grid.Row="1"/>
+                    </Grid>
+
+                </StackLayout>
+                
+
+                <BoxView Style="{StaticResource BorderStyle}"  Grid.Row="4"  Margin="8" CornerRadius="5" Opacity="0.5" x:Name="BoxExternal1"/>
+                <BoxView Style="{StaticResource InternalViewStyle}"  Grid.Row="4"  Margin="10,10,10,12" CornerRadius="5" x:Name="BoxInternal1" />
+
+                <StackLayout  Grid.Row="4" Orientation="Vertical" Padding="15" x:Name="lytButtons">
+
+                        <Label Text="Seleccione el idioma del formato:"  />
+                        <StackLayout  Orientation="Horizontal"   >
+                            <CheckBox  x:Name="cbxSpanish" Color="#005eff"  CheckedChanged="cbxSpanish_CheckedChanged" />
+                            <Image  Source="colombia.png" WidthRequest="23" HeightRequest="20"/>
+                            <Label Text="Español"  VerticalOptions="Center"  />
+                        </StackLayout>
+                        <StackLayout  Orientation="Horizontal"   >
+                            <CheckBox  x:Name="cbxEnglish" Color="#005eff"  CheckedChanged="cbxEnglish_CheckedChanged"/>
+                            <Image  Source="england.png" WidthRequest="23" HeightRequest="20"/>
+                            <Label Text="Inglés"   VerticalOptions="Center" />
+                        </StackLayout>
+
+                        <Label Text="En señal de aceptación firma este documento digital:"  />
+                    <StackLayout  Orientation="Horizontal"   >
+                        <CheckBox  x:Name="cbxPaciente" Color="#005eff"  CheckedChanged="cbxPaciente_CheckedChanged_1"/>
+                        <Label Text="Paciente"  VerticalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout  Orientation="Horizontal"   >
+                        <CheckBox  x:Name="cbxResponsable" Color="#005eff"  CheckedChanged="cbxResponsable_CheckedChanged_1"/>
+                        <Label Text="Acompañante"   VerticalOptions="Center" />
+                    </StackLayout>               
+                </StackLayout>
+                
+                 <Label Text="Habeas data ya fue aceptado." TextColor="DarkRed" Grid.Row="5" x:Name="lblHabeas" HorizontalOptions="CenterAndExpand"/>
+                <StackLayout  Grid.Row="6" HorizontalOptions="CenterAndExpand" Orientation="Horizontal" x:Name="lytAceptar">
+                    <Button Text="Limpiar"   Clicked="Button_Clicked" WidthRequest="150" CornerRadius="10"/>
+                    <Button Text="Continuar" x:Name="btnContinuar"  Clicked="Button_Clicked_1" BackgroundColor="#004e9d" TextColor="white"  WidthRequest="150" CornerRadius="10"/>
+                </StackLayout>
+                
+            </Grid>
+        </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

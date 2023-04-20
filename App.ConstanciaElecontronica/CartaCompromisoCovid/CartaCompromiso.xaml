@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:util="clr-namespace:App.ConstanciaElecontronica.Util"
+             xmlns:forms="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
+             xmlns:herlper="clr-namespace:App.ConstanciaElecontronica.Helper"
+             x:Class="App.ConstanciaElecontronica.CartaCompromisoCovid.CartaCompromiso">
+
+    <ContentPage.Resources>
+
+        <ResourceDictionary x:Name="AppDictionary">
+
+            <Color x:Key="BackgroundColor">#FFFFFF</Color>
+
+            <Color x:Key="BorderColor">#E1E1E1</Color>
+
+            <Style x:Key="InternalViewStyle" TargetType="BoxView">
+
+                <Setter Property="BackgroundColor" 
+
+            Value="{StaticResource BackgroundColor}"/>
+
+                <Setter Property="VerticalOptions" Value="Fill"/>
+
+                <Setter Property="Margin" Value="10,10,10,10"></Setter>
+
+            </Style>
+
+            <Style x:Key="BorderStyle" TargetType="BoxView">
+
+                <Setter Property="BackgroundColor" Value="{StaticResource BorderColor}"/>
+
+                <Setter Property="Margin" Value="3,1,1,3"></Setter>
+
+            </Style>
+
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+    
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White" >
+            
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+               
+
+                <Label Grid.Row="0"  Font="Bold" HorizontalTextAlignment="Center" Text="CARTA-COMPROMISO PARA LA ATENCIÓN HOSPITALARIA DE PACIENTES DURANTE EL PERIODO DE PANDEMIA POR COVID 19" FontSize="Medium" HorizontalOptions="Center" Margin="0,0,0,0" />
+
+                <StackLayout  Grid.Row="1" Orientation="Vertical" Padding="15" Margin="0,0,0,0">
+                    <Label Text="DATOS DE IDENTIFICACIÓN DE LA PERSONA" FontSize="Medium" />
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>                            
+                        </Grid.RowDefinitions>
+                        <Label Text="Nombre del Paciente:" Font="Bold" Grid.Column="0"  Grid.Row="0" Margin="0,0,0,0"/>
+                        <Label Text=""   x:Name="lblNombres" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3"/>
+                        
+                        <Label Text="Tipo identificación:" Font="Bold" Grid.Column="0"  Grid.Row="1"/>
+                        <Label Text=""   x:Name="lblTipoDoc" Grid.Column="1" Grid.Row="1"/>
+                        <Label Text="Identificación:" Font="Bold"   Grid.Column="2" Grid.Row="1"/>
+                        <Label Text=""   x:Name="lblIdentificacion" Grid.Column="3" Grid.Row="1"/>
+                        <Label Text="Fecha:" Font="Bold"   Grid.Column="2" Grid.Row="2"/>
+                        <Label Text=""   x:Name="lblFecha" Grid.Column="3" Grid.Row="2"/>
+                        <Label Text="Atencion:" Font="Bold"   Grid.Column="0" Grid.Row="2"/>
+                        <Label Text=""   x:Name="lblAtencion" Grid.Column="1" Grid.Row="2"/>
+
+                        
+                    </Grid>
+                    
+                </StackLayout>
+
+                <ScrollView Grid.Row="2"  VerticalOptions="FillAndExpand" BackgroundColor="White" x:Name="scrollCarta">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>                        
+                        </Grid.RowDefinitions>
+                        <BoxView Style="{StaticResource BorderStyle}" Grid.Row="0"  Margin="0" CornerRadius="5" Opacity="0.5" />
+                        <BoxView Style="{StaticResource InternalViewStyle}" Grid.Row="0"   Margin="10,10,10,12" CornerRadius="5" />
+
+                        <StackLayout Grid.Row="0"  Padding="15" x:Name="lyContenido">
+
+                            <Label TextType="Html" >
+                                <Label.Text>
+                                    <x:String>
+                                        <![CDATA[<h2>    Apreciados pacientes, familiares, acompañantes o visitantes:</h2>]]>
+                                    </x:String>
+                                </Label.Text>
+                            </Label>
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[Como es de su conocimiento, tanto en nuestro país, como en el mundo, estamos viviendo difíciles momentos, generados por la pandemia ocasionada por el virus SAR-CoV2/COVID 19. Es nuestra responsabilidad, informarles los posibles riesgos y complicaciones que pueden presentarse en relación con el virus y las responsabilidades que les corresponden, al ingresar a nuestra institución. A continuación, describiremos los aspectos más relevantes que deben conocer en relación con la situación actual y los compromisos que cada uno de ustedes, deberá asumir si acepta voluntariamente, continuar el proceso de atención en el hospital.]]>
+                            </util:HtmlFormattedLabel>
+
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[En el Hospital se encuentran hospitalizados en el momento pacientes contagiados por COVID-19 y otros sospechosos que presentan síntomas sugestivos. Hemos implementado una serie de medidas que describiremos a continuación, que buscan reducir la probabilidad de exposición y contagio, sin embargo, deben saber que existe un riesgo incrementado, dado el alto volumen de pacientes contagiados para este momento de la pandemia y la creciente afluencia de casos, cuyos determinantes naturales de la salud y la enfermedad, condicionan riesgos no modificables y nos exponen a todos al contagio, a pesar de las medidas instauradas, como las que a continuación se detallan.]]>
+                            </util:HtmlFormattedLabel>
+
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[Trabajamos por su seguridad, implementando las siguientes estrategias:
+                                ]]>
+                            </util:HtmlFormattedLabel>
+
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[1.	Brindamos las medidas de promoción de la salud y prevención de la enfermedad que han sido establecidas por el Ministerio de Salud y Protección Social y asociaciones científicas en el país, para reducir el riego de transmisión y contagio.]]>
+                            </util:HtmlFormattedLabel>
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[2.	Hemos establecido rutas diferenciadas de atención para pacientes sospechosos o infectados por COVID 19 y aquellos que no lo están.]]>
+                            </util:HtmlFormattedLabel>
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[3.	Proporcionamos a los trabajadores de la salud, personal administrativo, pacientes, familiares y acompañantes, los elementos de protección personal que se requieren, según las condiciones de salud del paciente y riesgos asociados al proceso de atención.]]>
+                            </util:HtmlFormattedLabel>
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[4.	Implementamos los protocolos institucionales de aislamiento de pacientes, según las características clínicas individuales y recomendaciones científicas vigentes.]]>
+                            </util:HtmlFormattedLabel>
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[5.	Aplicamos un protocolo de visitas y acompañamiento restringido, que favorece el distanciamiento físico y contamos con los implementos para el lavado de manos (agua, jabón, toallas desechables, gel antibacterial, etc).]]>
+                            </util:HtmlFormattedLabel>
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[6.	Nos regimos por guías y procedimientos institucionales para el diagnóstico, tratamiento y seguimiento de los pacientes afectados por COVID 19, que actualizamos periódicamente según los avances científicos que se publican en Colombia y el mundo y medidos estrictamente la adherencia a dichos procedimientos por parte de nuestro personal.]]>
+                            </util:HtmlFormattedLabel>
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[7.	Contratamos proveedores de traslado de pacientes que cumplen con las normas de seguridad y protección estipuladas por los entes de vigilancia y control en el país.]]>
+                            </util:HtmlFormattedLabel>
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[8.	Capacitamos a todos nuestros trabajadores y proveedores de servicios tercerizados, en el uso adecuado de elementos de protección personal, rutas diferenciadas de atención, procedimientos institucionales para la atención segura y humana de nuestros pacientes.]]>
+                            </util:HtmlFormattedLabel>
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[9.	Realizamos todos los reportes de notificación obligatoria que exigen el Ministerio de Salud y Protección Social y la Secretaria Distrital de Salud.]]>
+                            </util:HtmlFormattedLabel>
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[10.	Mantenemos estrecha comunicación con los aseguradores, para promover la continuidad en el proceso de atención y el seguimiento oportuno de los pacientes.]]>
+                            </util:HtmlFormattedLabel>
+
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[Pero, es muy importante que ustedes, como miembros activos de nuestra comunidad HUSI, sean parte del proceso y se comprometan con nosotros, a:]]>
+                            </util:HtmlFormattedLabel>
+
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[1.	Seguir de forma estricta las recomendaciones de distanciamiento físico mayor a 2 metros cuando transiten por el hospital o hagan uso de las áreas comunes.]]>
+                            </util:HtmlFormattedLabel>
+
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[2.	Portar su mascarilla convencional de tela antifluidos, que cubra perfectamente boca y nariz, desde que ingresan a la institución y sin retirarla en ningún momento. Para el caso de los pacientes, el médico tratante definirá que tipo de mascarilla debe usar y en qué circunstancias.]]>
+                            </util:HtmlFormattedLabel>
+
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[3.	Realizar higiene de manos con agua y jabón, o con alcohol glicerinado, que encontrarán en dispositivos que se encuentran instalados en todas las áreas del hospital; al ingreso, al egreso y al menos cada 2 horas, mientras permanezcan dentro de nuestras instalaciones.]]>
+                            </util:HtmlFormattedLabel>
+
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[4.	Informarnos si presentan alguna sintomatología respiratoria en el momento de su identificación en las puertas de acceso, si han estado en contacto con algún caso positivo de COVID 19 o creen estar contagiados, y si es así, abstenerse de ingresar al hospital y consultar con su asegurador de salud o al servicio de urgencias si es el caso.]]>
+                            </util:HtmlFormattedLabel>
+
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[5.	Evitar asistir al hospital si son personas mayores de 70 años, mujeres en estado de embarazo, niños, o si presentan alguna enfermedad de alto riesgo (enfermedad cardiovascular, diabetes, hipertensión, obesidad, inmunosupresión por cáncer, enfermedades reumatológicas, VIH, entre otras, que no se encuentren controladas).]]>
+                            </util:HtmlFormattedLabel>
+
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[6.	Utilizar rutas seguras y usar correctamente los medios de transporte particular o público, para acceder al hospital.]]>
+                            </util:HtmlFormattedLabel>
+
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[7.	Comprometerse a brindar el apoyo que requiera el paciente al egreso y las indicaciones médicas que correspondan, según la situación de salud, promoviendo un egreso seguro y oportuno.]]>
+                            </util:HtmlFormattedLabel>
+
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[8.	Favorecer los traslados interinstitucionales del paciente, si así se requiere, recordando que en este momento la gestión de las camas hospitalarias, se encuentra a cargo del centro regulador de urgencias de la ciudad.]]>
+                            </util:HtmlFormattedLabel>
+
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[9.	Leer nuestros documentos informativos, visualizar nuestro material educativo en HUSI TV y hacernos saber cualquier inquietud que presenten al respecto.]]>
+                            </util:HtmlFormattedLabel>
+
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[Debemos anotar, que, durante el proceso de hospitalización de un paciente infectado por COVID 19, se implementarán una serie de medidas terapéuticas específicas que buscan minimizar el desarrollo de complicaciones y favorecer la recuperación satisfactoria del paciente; sin embargo, existe la posibilidad, no predecible, de que sea necesario cambiar el plan de tratamiento inicialmente planteado ante un deterioro en la condición de salud y en algunos casos, existirá la necesidad de traslado a la Unidad de Cuidado Intensivo, lo que implica una alta posibilidad de requerir procedimientos invasivos, tales como: intubación orotraqueal para ventilación mecánica, punciones para colocación de accesos venosos centrales o catéteres arteriales, entre otras intervenciones, que hacen parte de la atención de una situación crítica y que deben instaurarse de manera prioritaria, según el criterio médico, en pro del beneficio del paciente.]]>
+                            </util:HtmlFormattedLabel>
+
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[Habiendo comprendido las responsabilidades que debemos asumir como grupo familiar y miembros activos de una comunidad afectada por esta pandemia y conociendo los riesgos que corremos al permanecer en el hospital; nos comprometemos voluntariamente a seguir estas indicaciones y asumimos los riesgos derivados de nuestra permanencia en la institución en calidad de paciente, familiar, acompañante o visitante.]]>
+                            </util:HtmlFormattedLabel>
+
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[Con nuestra firma en este documento certificamos que hemos leído o nos han leído el texto de este documento antes de suscribirlo, que lo comprendemos y nos comprometemos con el cumplimiento de nuestras obligaciones y deberes, y que aceptamos las intervenciones médicas que se requieran en caso de infección por el virus SARS-CoV2/COVID19.]]>
+                            </util:HtmlFormattedLabel>
+
+                            <util:HtmlFormattedLabel >
+                                <!-- FontSize="Medium" -->
+                                <![CDATA[Finalmente entendemos que las condiciones de la pandemia hacen que la situación al interior de los hospitales sea cambiante y que eventualmente, en caso de que el gobierno imponga mayores restricciones o se requiera traslado del paciente a la UCI, como familiares, acompañantes o visitantes, deberemos retirarnos de la institución.]]>
+                            </util:HtmlFormattedLabel>
+
+
+                            <Label TextType="Html" x:Name="lblDiaDeFirma">
+                                <Label.Text>
+                                    <x:String>
+                                        <![CDATA[Firman en Bogotá a los <b>______</b> días, del mes de ___________ del año _________:]]>
+                                    </x:String>
+                                </Label.Text>
+                            </Label>
+
+                            <Label Text=""   x:Name="lblError"   TextColor="DarkRed" IsVisible="false"  />
+                            
+                            <StackLayout Orientation="Horizontal" >
+                                <Label Text="Paciente" Font="Bold"    x:Name="lblSignPaciente" />
+                                <Label Text=""                        x:Name="lblPacienteFirma"/>
+                            </StackLayout>
+                            
+                            <forms:SignaturePadView BackgroundColor="White" 
+                                       HeightRequest="250"                                   
+                                        ClearText="{herlper:Translate Clear}"
+                                        CaptionText="{herlper:Translate Sing}"
+                                        x:Name="signPaciente"
+                                        />
+
+                            <StackLayout Orientation="Horizontal" >
+                            <Label Text="Acompañante:" Font="Bold"   Grid.Column="0" Grid.Row="2" x:Name="lblSignAcompaUno"/>
+                                <Label Text=""                           Grid.Column="1" Grid.Row="2"  x:Name="lblAcompananteUno"/>
+                            </StackLayout>
+                            
+                            <forms:SignaturePadView BackgroundColor="White"  
+                                 HeightRequest="250"                                  
+                                    ClearText="{herlper:Translate Clear}"
+                                    CaptionText="{herlper:Translate Sing}"
+                                    x:Name="signAcompananteUno"
+                                    />
+
+                            <StackLayout Orientation="Horizontal" >
+                                <Label Text="Acompañante:" Font="Bold"   x:Name="lblSignAcompaDos"/>
+                                <Label Text=""   x:Name="lblAcompananteDos" />
+                            </StackLayout>
+
+                            <forms:SignaturePadView BackgroundColor="White" 
+                                HeightRequest="250"                               
+                                    ClearText="{herlper:Translate Clear}"
+                                    CaptionText="{herlper:Translate Sing}"
+                                    x:Name="signAcompananteDos"
+                                    />
+                            
+                            <StackLayout    Margin="12" Orientation="Vertical" HorizontalOptions="Center" x:Name="lyBotones">
+                                <!--<Button Text="Cancelar" x:Name="btnCancelar" CornerRadius="10" BackgroundColor="LightGray" TextColor="#004e9d"  BorderColor="#004e9d" HorizontalOptions="Center" WidthRequest="250" Clicked="cancelarFirma"/>
+                                <ActivityIndicator IsRunning="false"   Color="LightGray" x:Name="barCancelar" WidthRequest="30" HeightRequest="30"/>-->
+                                
+                                <Button Text="Continuar" x:Name="btnAceptar" CornerRadius="10" BackgroundColor="#004e9d" TextColor="white" HorizontalOptions="Center" WidthRequest="250" Clicked="Button_Clicked"/>
+                                <StackLayout    Margin="5" Orientation="Horizontal" HorizontalOptions="Center" >
+                                    <ActivityIndicator IsRunning="false"   Color="#004e9d" x:Name="bar" WidthRequest="30" HeightRequest="30"/>
+                                    <Label Text="Guardando firma..." IsVisible="false" x:Name="lblbar"  VerticalOptions="Center"/>
+                                </StackLayout>
+                            </StackLayout>
+                            
+                            
+                        </StackLayout>
+
+                    </Grid>
+                </ScrollView>
+                
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
